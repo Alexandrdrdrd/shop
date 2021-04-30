@@ -46,6 +46,7 @@ class NotebookAdmin(admin.ModelAdmin):  # исправление для созд
 class SmartphoneAdmin(admin.ModelAdmin):  # исправление для создания новых категорий в админке
 
     form = NotebookAdminForm  # подключаем функцию валидатора изображений
+    change_form_template = 'admin.html'
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'category':

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load specifications %}
 {% block content %}
 
 
@@ -23,7 +23,15 @@
         <p>Описание {{product.description}}</p>
     </div>
     <p>Характеристики:</p>
-    {% if product.category.slug == 'notebooks' %}
+
+
+
+<!-- {{ product|product_spec }}-->
+
+
+
+
+    {% if product.category.slug == 'notebooks' %}      #можно использовать условия для пременения разных шаблонов
         {% include 'notebook_specification.html' %}
     {% else  %}
         {% include 'smartphone_specification.html' %}

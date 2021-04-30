@@ -22,18 +22,19 @@
     </tr>
       <tr>
       <td>Наличие слота для SD карты</td>
-      <td>{{ product.sd }}</td>
+      <td>{% if product.sd_volume_max %}True{% else %} False {% endif %}
+      </td>
     <tr>
       <td>Максимальный объем SD карты</td>
-      <td>{{ product.sd_volume_max }}</td>
+      <td>{% if product.sd_volume_max %}{{ product.sd_volume_max }}{% else %} Нету {% endif %}</td>
     </tr>
     <tr>
       <td>Главная камера</td>
       <td>{{ product.main_cum_mp }}</td>
     </tr>
     <tr>
-      <td>Фронтальная камера (МП)</td>
-      <td>{{ product.frontal_cum_mp  }}</td>
+      <td>Фронтальная камера </td>
+      <td>{{ product.frontal_cum_mp}}</td>
     </tr>
   </tbody>
 </table>
